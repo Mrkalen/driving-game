@@ -22,3 +22,19 @@ img {
 .car {
   width: 10rem;
 }
+
+.east {
+  transform: rotate(0);
+}
+
+.north {
+  transform: rotate(-90deg);
+}
+
+.south {
+  transform: rotate(90deg);
+}
+
+.west {
+  transform: rotate(180deg);
+}
