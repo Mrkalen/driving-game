@@ -1,4 +1,7 @@
-var carDirection = { direction: 'east' };
+var carDirection = {
+  direction: 'east',
+  location: { x: 0, y: 0 }
+};
 
 var $car = document.querySelector('.car');
 
