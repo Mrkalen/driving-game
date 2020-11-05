@@ -5,11 +5,15 @@ var carDirection = {
 };
 
 var $car = document.querySelector('.car');
+var moveInterval = 0;
 
 document.addEventListener('keydown', function () {
   if (event.key === ' ' && carDirection.ignition === 'off') {
-    var moveInterval = setInterval(moveCar, 16);
+    moveInterval = setInterval(moveCar, 16);
     carDirection.ignition = 'on';
+  } else if (event.key === ' ' && carDirection.ignition === 'on') {
+    clearInterval(moveInterval);
+    carDirection.ignition = 'off';
   }
   if (event.key === 'ArrowUp') {
     carDirection.direction = 'north';
