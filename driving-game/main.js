@@ -28,5 +28,13 @@ document.addEventListener('keydown', function () {
 });
 
 function moveCar() {
-  $car.setAttribute('style', 'left: ' + (carDirection.location.y += 8) + 'px');
+  if (carDirection.direction === 'east') {
+    $car.setAttribute('style', 'left: ' + (carDirection.location.y += 8) + 'px; top: ' + carDirection.location.x + 'px');
+  } else if (carDirection.direction === 'north') {
+    $car.setAttribute('style', 'top: ' + (carDirection.location.x -= 8) + 'px; left: ' + carDirection.location.y + 'px');
+  } else if (carDirection.direction === 'south') {
+    $car.setAttribute('style', 'top: ' + (carDirection.location.x += 8) + 'px; left: ' + carDirection.location.y + 'px');
+  } else if (carDirection.direction === 'west') {
+    $car.setAttribute('style', 'left: ' + (carDirection.location.y -= 8) + 'px; top: ' + carDirection.location.x + 'px');
+  }
 }
